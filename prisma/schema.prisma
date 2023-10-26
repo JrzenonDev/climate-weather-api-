@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model CityWeather {
+  id            Int      @id @default(autoincrement())
+  cityCode      String
+  city          String
+  state         String
+  updatedAt     DateTime
+  date          DateTime
+  condition     String
+  conditionDesc String
+  min           Int
+  max           Int
+  uvIndex       Int
+}
+
+model AirportWeather {
+  id                  Int      @id @default(autoincrement())
+  airportCode         String
+  humidity            Int
+  visibility          String
+  icaoCode            String
+  atmosphericPressure Int
+  windSpeed           Int
+  windDirection       Int
+  condition           String
+  conditionDesc       String
+  temperature         Int
+  updatedAt           DateTime
+}
