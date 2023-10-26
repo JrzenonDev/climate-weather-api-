@@ -13,7 +13,7 @@ const getCityWeather = async (req, res) => {
     // Save the data to the database using the service
     await cityWeatherService.saveCityWeatherToDatabase(cityCode, response);
 
-    res.json(response.data);
+    res.status(200).json(response.data);
   } catch (error) {
     // Save the error to the database using the service
     await saveCityWeatherErrorToDatabase.saveCityWeatherErrorToDatabase({
