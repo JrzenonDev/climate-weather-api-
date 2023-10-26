@@ -35,3 +35,19 @@ model AirportWeather {
   temperature         Int
   updatedAt           DateTime
 }
+
+model CityWeatherError {
+  id      Int    @id @default(autoincrement())
+  message String
+  name    String
+  code    String
+  status  Int
+}
+
+model AirportWeatherError {
+  id      Int    @id @default(autoincrement())
+  message String
+  name    String
+  code    String
+  status  Int
+}
