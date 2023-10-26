@@ -10,9 +10,11 @@
   "author": "José Roberto de Oliveira",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.5.2",
     "axios": "^1.5.1",
     "express": "^4.18.2",
-    "prisma": "^5.5.2"
+    "prisma": "^5.5.2",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
