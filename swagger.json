@@ -1,0 +1,92 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Climate Weather API",
+    "version": "1.0.0",
+    "description": "API para consultar informações climáticas de cidades e aeroportos."
+  },
+  "paths": {
+    "/city/{cityCode}": {
+      "get": {
+        "summary": "Get weather information for a specific city.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cityCode",
+            "required": true,
+            "description": "The city code or identifier.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with weather information.",
+            "content": {
+              "application/json": {
+                "example": "{\"cidade\": \"Brejo Alegre\", \"estado\": \"SP\", \"atualizado_em\": \"2023-10-26\", \"clima\": [{\"data\": \"2023-10-27\", \"condicao\": \"c\", \"condicao_desc\": \"Chuva\", \"min\": 23, \"max\": 32, \"indice_uv\": 13}]}"
+              }
+            }
+          },
+          "404": {
+            "description": "City not found.",
+            "content": {
+              "application/json": {
+                "example": "{\"error\": \"City not found.\"}"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error.",
+            "content": {
+              "application/json": {
+                "example": "{\"error\": \"Error fetching weather data for the city.\"}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/airport/{airportCode}": {
+      "get": {
+        "summary": "Get weather information for a specific airport.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "airportCode",
+            "required": true,
+            "description": "The IATA code of the airport.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with weather information.",
+            "content": {
+              "application/json": {
+                "example": "{\"umidade\": 93, \"visibilidade\": \">10000\", \"codigo_icao\": \"SBGR\", \"pressao_atmosferica\": 1014, \"vento\": 4, \"direcao_vento\": 140, \"condicao\": \"ps\", \"condicao_desc\": \"Predomínio de Sol\", \"temp\": 18, \"atualizado_em\": \"2023-10-26T22:00:00.827Z\"}"
+              }
+            }
+          },
+          "404": {
+            "description": "Airport not found.",
+            "content": {
+              "application/json": {
+                "example": "{\"error\": \"Airport not found.\"}"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error.",
+            "content": {
+              "application/json": {
+                "example": "{\"error\": \"Error fetching weather data for the airport.\"}"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}
