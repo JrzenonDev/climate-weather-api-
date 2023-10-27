@@ -45,7 +45,7 @@ test("getCityWeather should return weather data", async () => {
 
   // Check if the json function was called with the expected error
   expect(res.json).toHaveBeenCalledWith({
-    error: "Erro ao obter dados de clima da cidade",
+    error: "Error getting city weather data",
   });
 
   // Checking that saveCityWeatherErrorToDatabase was not called

@@ -27,7 +27,7 @@ const getAirportWeather = async (req, res) => {
     });
     res
       .status(500)
-      .json({ error: "Erro ao obter dados de clima de um aeroporto" });
+      .json({ error: "Error getting weather data from an airport" });
   }
 };
 

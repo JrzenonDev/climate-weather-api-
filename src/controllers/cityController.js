@@ -23,7 +23,7 @@ const getCityWeather = async (req, res) => {
       status: error.response ? error.response.status : null,
     });
 
-    res.status(500).json({ error: "Erro ao obter dados de clima da cidade" });
+    res.status(500).json({ error: "Error getting city weather data" });
   }
 };
 

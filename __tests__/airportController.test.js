@@ -28,7 +28,7 @@ test("getAirportWeather should handle errors", async () => {
 
   // checks if the json function was called with the expected error message
   expect(res.json).toHaveBeenCalledWith({
-    error: "Erro ao obter dados de clima de um aeroporto",
+    error: "Error getting weather data from an airport",
   });
 
   // Checks if saveAirportWeatherErrorToDatabase was called
